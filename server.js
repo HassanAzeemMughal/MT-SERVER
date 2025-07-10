@@ -8,14 +8,16 @@ const apiRoutes = require("./routes");
 
 const app = express();
 
-const frontendUrl =
-  process.env.FRONTEND_URL || "https://mt-frontend-puce.vercel.app";
+// normalize .env frontend url (remove trailing slash if present)
+const frontendUrl = (
+  process.env.FRONTEND_URL || "https://mt-frontend-puce.vercel.app"
+).replace(/\/$/, "");
 console.log("✅ FRONTEND_URL from .env:", frontendUrl);
 
 const allowedOrigins = [
   "http://localhost:5173",
   "http://localhost:3000",
-  frontendUrl.replace(/\/$/, ""), // remove trailing slash
+  frontendUrl,
 ];
 
 console.log("✅ Allowed origins:", allowedOrigins);
@@ -23,7 +25,8 @@ console.log("✅ Allowed origins:", allowedOrigins);
 const corsOptions = {
   origin: function (origin, callback) {
     console.log("🔷 Request Origin:", origin);
-    if (!origin || allowedOrigins.includes(origin)) {
+    const normalizedOrigins = allowedOrigins.map((o) => o.replace(/\/$/, ""));
+    if (!origin || normalizedOrigins.includes(origin)) {
       callback(null, true);
     } else {
       console.error("❌ Blocked by CORS:", origin);
