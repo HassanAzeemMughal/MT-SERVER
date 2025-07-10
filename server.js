@@ -1,14 +1,13 @@
 require("dotenv").config();
 const path = require("path");
 const express = require("express");
-const bodyParser = require("body-parser");
 const cors = require("cors");
+const bodyParser = require("body-parser");
 const connectDB = require("./config/db.config");
 const apiRoutes = require("./routes");
 
 const app = express();
 
-// Normalize frontend URL
 const frontendUrl = (
   process.env.FRONTEND_URL || "https://mt-frontend-puce.vercel.app"
 ).replace(/\/$/, "");
@@ -22,19 +21,9 @@ const allowedOrigins = [
 
 console.log("✅ Allowed origins:", allowedOrigins);
 
-// Enhanced CORS configuration
 const corsOptions = {
   origin: function (origin, callback) {
-    console.log("🔷 Request Origin:", origin);
-
-    // Allow all in development
-    if (process.env.NODE_ENV === "development") {
-      return callback(null, true);
-    }
-
-    // Production: Check allowed origins
-    const normalizedOrigins = allowedOrigins.map((o) => o.replace(/\/$/, ""));
-    if (!origin || normalizedOrigins.includes(origin)) {
+    if (!origin || allowedOrigins.includes(origin.replace(/\/$/, ""))) {
       callback(null, true);
     } else {
       console.error("❌ Blocked by CORS:", origin);
@@ -42,37 +31,27 @@ const corsOptions = {
     }
   },
   credentials: true,
-  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-  allowedHeaders: ["Content-Type", "Authorization"],
 };
 
-// Apply middlewares
 app.use(cors(corsOptions));
-app.options("*", cors(corsOptions)); // Handle preflight requests
+// Handle preflight everywhere
+app.options("*", cors(corsOptions));
 
 app.use(express.json({ limit: "10mb" }));
 app.use(bodyParser.urlencoded({ extended: true, limit: "10mb" }));
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
-// Connect to MongoDB
 connectDB();
 
-// Routes
 app.get("/", (req, res) => {
   res.send("✅ Backend is running on Vercel 🚀");
 });
 
 app.use("/api/v1", apiRoutes);
 
-// Error handling middleware with CORS headers
+// Error handler
 app.use((err, req, res, next) => {
   console.error("🔥 Server Error:", err.stack);
-
-  const origin = req.headers.origin;
-  if (allowedOrigins.map((o) => o.replace(/\/$/, "")).includes(origin)) {
-    res.setHeader("Access-Control-Allow-Origin", origin);
-    res.setHeader("Access-Control-Allow-Credentials", "true");
-  }
 
   res.status(err.status || 500).json({
     error: "Internal Server Error",
@@ -80,10 +59,8 @@ app.use((err, req, res, next) => {
   });
 });
 
-// Export for Vercel
 module.exports = app;
 
-// Local server
 if (require.main === module) {
   const PORT = process.env.PORT || 5000;
   app.listen(PORT, () => {
