@@ -1,0 +1,902 @@
+2025-02-21 11:45:45 [31merror[39m: uncaughtException: Route.post() requires a callback function but got a [object Undefined]
+Error: Route.post() requires a callback function but got a [object Undefined]
+    at Route.<computed> [as post] (D:\react\pharma-portal-server\node_modules\express\lib\router\route.js:216:15)
+    at proto.<computed> [as post] (D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:521:19)
+    at Object.<anonymous> (D:\react\ma-portal-server\api\users\auth.routes.js:19:8)
+    at Module._compile (node:internal/modules/cjs/loader:1358:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+    at Module.load (node:internal/modules/cjs/loader:1208:32)
+    at Module._load (node:internal/modules/cjs/loader:1024:12)
+    at Module.require (node:internal/modules/cjs/loader:1233:19)
+    at require (node:internal/modules/helpers:179:18)
+    at Object.<anonymous> (D:\react\pharma-portal-server\routes\index.js:13:20)
+2025-02-21 12:02:05 [31merror[39m: uncaughtException: Route.post() requires a callback function but got a [object Undefined]
+Error: Route.post() requires a callback function but got a [object Undefined]
+    at Route.<computed> [as post] (D:\react\pharma-portal-server\node_modules\express\lib\router\route.js:216:15)
+    at proto.<computed> [as post] (D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:521:19)
+    at Object.<anonymous> (D:\react\pharma-portal-server\api\users\auth.routes.js:19:8)
+    at Module._compile (node:internal/modules/cjs/loader:1358:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+    at Module.load (node:internal/modules/cjs/loader:1208:32)
+    at Module._load (node:internal/modules/cjs/loader:1024:12)
+    at Module.require (node:internal/modules/cjs/loader:1233:19)
+    at require (node:internal/modules/helpers:179:18)
+    at Object.<anonymous> (D:\react\pharma-portal-server\routes\index.js:13:20)
+2025-02-21 12:10:59 [31merror[39m: uncaughtException: Route.post() requires a callback function but got a [object Undefined]
+Error: Route.post() requires a callback function but got a [object Undefined]
+    at Route.<computed> [as post] (D:\react\pharma-portal-server\node_modules\express\lib\router\route.js:216:15)
+    at proto.<computed> [as post] (D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:521:19)
+    at Object.<anonymous> (D:\react\pharma-portal-server\api\users\auth.routes.js:20:8)
+    at Module._compile (node:internal/modules/cjs/loader:1358:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+    at Module.load (node:internal/modules/cjs/loader:1208:32)
+    at Module._load (node:internal/modules/cjs/loader:1024:12)
+    at Module.require (node:internal/modules/cjs/loader:1233:19)
+    at require (node:internal/modules/helpers:179:18)
+    at Object.<anonymous> (D:\react\pharma-portal-server\routes\index.js:13:20)
+2025-02-21 12:21:52 [31merror[39m: uncaughtException: check is not defined
+ReferenceError: check is not defined
+    at ForgotPassword (D:\react\pharma-portal-server\api\users\user.controller.js:489:3)
+    at Layer.handle [as handle_request] (D:\react\pharma-portal-server\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\react\pharma-portal-server\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\react\pharma-portal-server\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\react\pharma-portal-server\node_modules\express\lib\router\layer.js:95:5)
+    at D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:280:10)
+    at Function.handle (D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:175:3)
+    at router (D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:47:12)
+2025-02-21 12:24:11 [31merror[39m: uncaughtException: check is not defined
+ReferenceError: check is not defined
+    at ForgotPassword (D:\react\pharma-portal-server\api\users\user.controller.js:490:3)
+    at Layer.handle [as handle_request] (D:\react\pharma-portal-server\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\react\pharma-portal-server\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\react\pharma-portal-server\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\react\pharma-portal-server\node_modules\express\lib\router\layer.js:95:5)
+    at D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:280:10)
+    at Function.handle (D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:175:3)
+    at router (D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:47:12)
+2025-02-21 12:24:40 [31merror[39m: uncaughtException: check is not defined
+ReferenceError: check is not defined
+    at ForgotPassword (D:\react\pharma-portal-server\api\users\user.controller.js:490:3)
+    at Layer.handle [as handle_request] (D:\react\pharma-portal-server\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\react\pharma-portal-server\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\react\pharma-portal-server\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\react\pharma-portal-server\node_modules\express\lib\router\layer.js:95:5)
+    at D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:280:10)
+    at Function.handle (D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:175:3)
+    at router (D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:47:12)
+2025-02-21 12:25:35 [31merror[39m: uncaughtException: check is not defined
+ReferenceError: check is not defined
+    at ForgotPassword (D:\react\pharma-portal-server\api\users\user.controller.js:490:3)
+    at Layer.handle [as handle_request] (D:\react\pharma-portal-server\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\react\pharma-portal-server\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\react\pharma-portal-server\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\react\pharma-portal-server\node_modules\express\lib\router\layer.js:95:5)
+    at D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:280:10)
+    at Function.handle (D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:175:3)
+    at router (D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:47:12)
+2025-02-21 12:28:43 [31merror[39m: uncaughtException: ResetPasswords is not defined
+ReferenceError: ResetPasswords is not defined
+    at Object.<anonymous> (D:\react\pharma-portal-server\api\users\user.controller.js:620:3)
+    at Module._compile (node:internal/modules/cjs/loader:1358:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+    at Module.load (node:internal/modules/cjs/loader:1208:32)
+    at Module._load (node:internal/modules/cjs/loader:1024:12)
+    at Module.require (node:internal/modules/cjs/loader:1233:19)
+    at require (node:internal/modules/helpers:179:18)
+    at Object.<anonymous> (D:\react\pharma-portal-server\api\users\auth.routes.js:5:24)
+    at Module._compile (node:internal/modules/cjs/loader:1358:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+2025-02-21 12:28:46 [31merror[39m: uncaughtException: Route.post() requires a callback function but got a [object Undefined]
+Error: Route.post() requires a callback function but got a [object Undefined]
+    at Route.<computed> [as post] (D:\react\pharma-portal-server\node_modules\express\lib\router\route.js:216:15)
+    at proto.<computed> [as post] (D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:521:19)
+    at Object.<anonymous> (D:\react\pharma-portal-server\api\users\auth.routes.js:19:8)
+    at Module._compile (node:internal/modules/cjs/loader:1358:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+    at Module.load (node:internal/modules/cjs/loader:1208:32)
+    at Module._load (node:internal/modules/cjs/loader:1024:12)
+    at Module.require (node:internal/modules/cjs/loader:1233:19)
+    at require (node:internal/modules/helpers:179:18)
+    at Object.<anonymous> (D:\react\pharma-portal-server\routes\index.js:13:20)
+2025-02-21 12:29:21 [31merror[39m: uncaughtException: check is not defined
+ReferenceError: check is not defined
+    at ForgotPassword (D:\react\pharma-portal-server\api\users\user.controller.js:490:3)
+    at Layer.handle [as handle_request] (D:\react\pharma-portal-server\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\react\pharma-portal-server\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\react\pharma-portal-server\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\react\pharma-portal-server\node_modules\express\lib\router\layer.js:95:5)
+    at D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:280:10)
+    at Function.handle (D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:175:3)
+    at router (D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:47:12)
+2025-02-21 12:30:24 [31merror[39m: uncaughtException: check is not defined
+ReferenceError: check is not defined
+    at ForgotPassword (D:\react\pharma-portal-server\api\users\user.controller.js:491:3)
+    at Layer.handle [as handle_request] (D:\react\pharma-portal-server\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\react\pharma-portal-server\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\react\pharma-portal-server\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\react\pharma-portal-server\node_modules\express\lib\router\layer.js:95:5)
+    at D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:280:10)
+    at Function.handle (D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:175:3)
+    at router (D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:47:12)
+2025-02-21 12:31:03 [31merror[39m: uncaughtException: check is not defined
+ReferenceError: check is not defined
+    at ForgotPassword (D:\react\pharma-portal-server\api\users\user.controller.js:491:3)
+    at Layer.handle [as handle_request] (D:\react\pharma-portal-server\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\react\pharma-portal-server\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\react\pharma-portal-server\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\react\pharma-portal-server\node_modules\express\lib\router\layer.js:95:5)
+    at D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:280:10)
+    at Function.handle (D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:175:3)
+    at router (D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:47:12)
+2025-02-21 12:31:56 [31merror[39m: uncaughtException: check is not defined
+ReferenceError: check is not defined
+    at ForgotPassword (D:\react\pharma-portal-server\api\users\user.controller.js:491:3)
+    at Layer.handle [as handle_request] (D:\react\pharma-portal-server\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\react\pharma-portal-server\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\react\pharma-portal-server\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\react\pharma-portal-server\node_modules\express\lib\router\layer.js:95:5)
+    at D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:280:10)
+    at Function.handle (D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:175:3)
+    at router (D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:47:12)
+2025-02-21 12:34:09 [31merror[39m: uncaughtException: check is not defined
+ReferenceError: check is not defined
+    at ForgotPassword (D:\react\pharma-portal-server\api\users\user.controller.js:491:3)
+    at Layer.handle [as handle_request] (D:\react\pharma-portal-server\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\react\pharma-portal-server\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\react\pharma-portal-server\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\react\pharma-portal-server\node_modules\express\lib\router\layer.js:95:5)
+    at D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:280:10)
+    at Function.handle (D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:175:3)
+    at router (D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:47:12)
+2025-02-21 12:35:18 [31merror[39m: uncaughtException: check is not defined
+ReferenceError: check is not defined
+    at ForgotPassword (D:\react\pharma-portal-server\api\users\user.controller.js:491:3)
+    at Layer.handle [as handle_request] (D:\react\pharma-portal-server\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\react\pharma-portal-server\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\react\pharma-portal-server\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\react\pharma-portal-server\node_modules\express\lib\router\layer.js:95:5)
+    at D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:280:10)
+    at Function.handle (D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:175:3)
+    at router (D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:47:12)
+2025-02-21 12:35:46 [31merror[39m: uncaughtException: check is not defined
+ReferenceError: check is not defined
+    at ForgotPassword (D:\react\pharma-portal-server\api\users\user.controller.js:491:3)
+    at Layer.handle [as handle_request] (D:\react\pharma-portal-server\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\react\pharma-portal-server\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\react\pharma-portal-server\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\react\pharma-portal-server\node_modules\express\lib\router\layer.js:95:5)
+    at D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:280:10)
+    at Function.handle (D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:175:3)
+    at router (D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:47:12)
+2025-02-21 12:36:39 [31merror[39m: uncaughtException: check is not defined
+ReferenceError: check is not defined
+    at ForgotPassword (D:\react\pharma-portal-server\api\users\user.controller.js:491:3)
+    at Layer.handle [as handle_request] (D:\react\pharma-portal-server\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\react\pharma-portal-server\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\react\pharma-portal-server\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\react\pharma-portal-server\node_modules\express\lib\router\layer.js:95:5)
+    at D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:280:10)
+    at Function.handle (D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:175:3)
+    at router (D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:47:12)
+2025-02-21 14:25:28 [31merror[39m: uncaughtException: corsOptions is not defined
+ReferenceError: corsOptions is not defined
+    at Object.<anonymous> (D:\react\pharma-portal-server\server.js:28:14)
+    at Module._compile (node:internal/modules/cjs/loader:1358:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+    at Module.load (node:internal/modules/cjs/loader:1208:32)
+    at Module._load (node:internal/modules/cjs/loader:1024:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:174:12)
+    at node:internal/main/run_main_module:28:49
+2025-02-25 20:26:13 [31merror[39m: uncaughtException: rolesController is not defined
+ReferenceError: rolesController is not defined
+    at Object.<anonymous> (D:\react\pharma-portal-server\api\users\auth.routes.js:12:20)
+    at Module._compile (node:internal/modules/cjs/loader:1358:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+    at Module.load (node:internal/modules/cjs/loader:1208:32)
+    at Module._load (node:internal/modules/cjs/loader:1024:12)
+    at Module.require (node:internal/modules/cjs/loader:1233:19)
+    at require (node:internal/modules/helpers:179:18)
+    at Object.<anonymous> (D:\react\pharma-portal-server\routes\index.js:13:20)
+    at Module._compile (node:internal/modules/cjs/loader:1358:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+2025-02-25 20:26:34 [31merror[39m: uncaughtException: rolesController is not defined
+ReferenceError: rolesController is not defined
+    at Object.<anonymous> (D:\react\pharma-portal-server\api\users\auth.routes.js:12:20)
+    at Module._compile (node:internal/modules/cjs/loader:1358:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+    at Module.load (node:internal/modules/cjs/loader:1208:32)
+    at Module._load (node:internal/modules/cjs/loader:1024:12)
+    at Module.require (node:internal/modules/cjs/loader:1233:19)
+    at require (node:internal/modules/helpers:179:18)
+    at Object.<anonymous> (D:\react\pharma-portal-server\routes\index.js:13:20)
+    at Module._compile (node:internal/modules/cjs/loader:1358:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+2025-02-25 20:33:50 [31merror[39m: uncaughtException: getUserById is not defined
+ReferenceError: getUserById is not defined
+    at Object.<anonymous> (D:\react\pharma-portal-server\api\users\user.controller.js:643:3)
+    at Module._compile (node:internal/modules/cjs/loader:1358:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+    at Module.load (node:internal/modules/cjs/loader:1208:32)
+    at Module._load (node:internal/modules/cjs/loader:1024:12)
+    at Module.require (node:internal/modules/cjs/loader:1233:19)
+    at require (node:internal/modules/helpers:179:18)
+    at Object.<anonymous> (D:\react\pharma-portal-server\api\users\auth.routes.js:5:24)
+    at Module._compile (node:internal/modules/cjs/loader:1358:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+2025-02-25 21:00:20 [31merror[39m: uncaughtException: getUserById is not defined
+ReferenceError: getUserById is not defined
+    at Object.<anonymous> (D:\react\pharma-portal-server\api\users\user.controller.js:687:3)
+    at Module._compile (node:internal/modules/cjs/loader:1358:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+    at Module.load (node:internal/modules/cjs/loader:1208:32)
+    at Module._load (node:internal/modules/cjs/loader:1024:12)
+    at Module.require (node:internal/modules/cjs/loader:1233:19)
+    at require (node:internal/modules/helpers:179:18)
+    at Object.<anonymous> (D:\react\pharma-portal-server\api\users\auth.routes.js:5:24)
+    at Module._compile (node:internal/modules/cjs/loader:1358:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+2025-02-25 21:25:25 [31merror[39m: uncaughtException: Route.get() requires a callback function but got a [object Undefined]
+Error: Route.get() requires a callback function but got a [object Undefined]
+    at Route.<computed> [as get] (D:\react\pharma-portal-server\node_modules\express\lib\router\route.js:216:15)
+    at proto.<computed> [as get] (D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:521:19)
+    at Object.<anonymous> (D:\react\pharma-portal-server\api\users\auth.routes.js:22:8)
+    at Module._compile (node:internal/modules/cjs/loader:1358:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+    at Module.load (node:internal/modules/cjs/loader:1208:32)
+    at Module._load (node:internal/modules/cjs/loader:1024:12)
+    at Module.require (node:internal/modules/cjs/loader:1233:19)
+    at require (node:internal/modules/helpers:179:18)
+    at Object.<anonymous> (D:\react\pharma-portal-server\routes\index.js:13:20)
+2025-02-25 21:26:15 [31merror[39m: uncaughtException: Route.get() requires a callback function but got a [object Undefined]
+Error: Route.get() requires a callback function but got a [object Undefined]
+    at Route.<computed> [as get] (D:\react\pharma-portal-server\node_modules\express\lib\router\route.js:216:15)
+    at proto.<computed> [as get] (D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:521:19)
+    at Object.<anonymous> (D:\react\pharma-portal-server\api\users\auth.routes.js:22:8)
+    at Module._compile (node:internal/modules/cjs/loader:1358:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+    at Module.load (node:internal/modules/cjs/loader:1208:32)
+    at Module._load (node:internal/modules/cjs/loader:1024:12)
+    at Module.require (node:internal/modules/cjs/loader:1233:19)
+    at require (node:internal/modules/helpers:179:18)
+    at Object.<anonymous> (D:\react\pharma-portal-server\routes\index.js:13:20)
+2025-02-25 23:28:14 [31merror[39m: uncaughtException: upload is not defined
+ReferenceError: upload is not defined
+    at Object.<anonymous> (D:\react\pharma-portal-server\api\users\auth.routes.js:26:3)
+    at Module._compile (node:internal/modules/cjs/loader:1358:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+    at Module.load (node:internal/modules/cjs/loader:1208:32)
+    at Module._load (node:internal/modules/cjs/loader:1024:12)
+    at Module.require (node:internal/modules/cjs/loader:1233:19)
+    at require (node:internal/modules/helpers:179:18)
+    at Object.<anonymous> (D:\react\pharma-portal-server\routes\index.js:13:20)
+    at Module._compile (node:internal/modules/cjs/loader:1358:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+2025-02-25 23:29:53 [31merror[39m: uncaughtException: upload is not defined
+ReferenceError: upload is not defined
+    at Object.<anonymous> (D:\react\pharma-portal-server\api\users\auth.routes.js:26:3)
+    at Module._compile (node:internal/modules/cjs/loader:1358:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+    at Module.load (node:internal/modules/cjs/loader:1208:32)
+    at Module._load (node:internal/modules/cjs/loader:1024:12)
+    at Module.require (node:internal/modules/cjs/loader:1233:19)
+    at require (node:internal/modules/helpers:179:18)
+    at Object.<anonymous> (D:\react\pharma-portal-server\routes\index.js:13:20)
+    at Module._compile (node:internal/modules/cjs/loader:1358:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+2025-02-25 23:32:20 [31merror[39m: uncaughtException: upload is not defined
+ReferenceError: upload is not defined
+    at Object.<anonymous> (D:\react\pharma-portal-server\api\users\auth.routes.js:26:3)
+    at Module._compile (node:internal/modules/cjs/loader:1358:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+    at Module.load (node:internal/modules/cjs/loader:1208:32)
+    at Module._load (node:internal/modules/cjs/loader:1024:12)
+    at Module.require (node:internal/modules/cjs/loader:1233:19)
+    at require (node:internal/modules/helpers:179:18)
+    at Object.<anonymous> (D:\react\pharma-portal-server\routes\index.js:13:20)
+    at Module._compile (node:internal/modules/cjs/loader:1358:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+2025-02-25 23:32:38 [31merror[39m: uncaughtException: upload is not defined
+ReferenceError: upload is not defined
+    at Object.<anonymous> (D:\react\pharma-portal-server\api\users\auth.routes.js:26:3)
+    at Module._compile (node:internal/modules/cjs/loader:1358:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+    at Module.load (node:internal/modules/cjs/loader:1208:32)
+    at Module._load (node:internal/modules/cjs/loader:1024:12)
+    at Module.require (node:internal/modules/cjs/loader:1233:19)
+    at require (node:internal/modules/helpers:179:18)
+    at Object.<anonymous> (D:\react\pharma-portal-server\routes\index.js:13:20)
+    at Module._compile (node:internal/modules/cjs/loader:1358:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+2025-02-25 23:32:54 [31merror[39m: uncaughtException: upload is not defined
+ReferenceError: upload is not defined
+    at Object.<anonymous> (D:\react\pharma-portal-server\api\users\auth.routes.js:26:3)
+    at Module._compile (node:internal/modules/cjs/loader:1358:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+    at Module.load (node:internal/modules/cjs/loader:1208:32)
+    at Module._load (node:internal/modules/cjs/loader:1024:12)
+    at Module.require (node:internal/modules/cjs/loader:1233:19)
+    at require (node:internal/modules/helpers:179:18)
+    at Object.<anonymous> (D:\react\pharma-portal-server\routes\index.js:13:20)
+    at Module._compile (node:internal/modules/cjs/loader:1358:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+2025-02-25 23:33:18 [31merror[39m: uncaughtException: upload is not defined
+ReferenceError: upload is not defined
+    at Object.<anonymous> (D:\react\pharma-portal-server\api\users\auth.routes.js:26:3)
+    at Module._compile (node:internal/modules/cjs/loader:1358:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+    at Module.load (node:internal/modules/cjs/loader:1208:32)
+    at Module._load (node:internal/modules/cjs/loader:1024:12)
+    at Module.require (node:internal/modules/cjs/loader:1233:19)
+    at require (node:internal/modules/helpers:179:18)
+    at Object.<anonymous> (D:\react\pharma-portal-server\routes\index.js:13:20)
+    at Module._compile (node:internal/modules/cjs/loader:1358:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+2025-02-25 23:34:44 [31merror[39m: uncaughtException: upload is not defined
+ReferenceError: upload is not defined
+    at Object.<anonymous> (D:\react\pharma-portal-server\api\users\auth.routes.js:26:3)
+    at Module._compile (node:internal/modules/cjs/loader:1358:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+    at Module.load (node:internal/modules/cjs/loader:1208:32)
+    at Module._load (node:internal/modules/cjs/loader:1024:12)
+    at Module.require (node:internal/modules/cjs/loader:1233:19)
+    at require (node:internal/modules/helpers:179:18)
+    at Object.<anonymous> (D:\react\pharma-portal-server\routes\index.js:13:20)
+    at Module._compile (node:internal/modules/cjs/loader:1358:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+2025-02-25 23:35:12 [31merror[39m: uncaughtException: upload is not defined
+ReferenceError: upload is not defined
+    at Object.<anonymous> (D:\react\pharma-portal-server\api\users\auth.routes.js:26:3)
+    at Module._compile (node:internal/modules/cjs/loader:1358:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+    at Module.load (node:internal/modules/cjs/loader:1208:32)
+    at Module._load (node:internal/modules/cjs/loader:1024:12)
+    at Module.require (node:internal/modules/cjs/loader:1233:19)
+    at require (node:internal/modules/helpers:179:18)
+    at Object.<anonymous> (D:\react\pharma-portal-server\routes\index.js:13:20)
+    at Module._compile (node:internal/modules/cjs/loader:1358:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+2025-02-25 23:35:27 [31merror[39m: uncaughtException: upload is not defined
+ReferenceError: upload is not defined
+    at Object.<anonymous> (D:\react\pharma-portal-server\api\users\auth.routes.js:26:3)
+    at Module._compile (node:internal/modules/cjs/loader:1358:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+    at Module.load (node:internal/modules/cjs/loader:1208:32)
+    at Module._load (node:internal/modules/cjs/loader:1024:12)
+    at Module.require (node:internal/modules/cjs/loader:1233:19)
+    at require (node:internal/modules/helpers:179:18)
+    at Object.<anonymous> (D:\react\pharma-portal-server\routes\index.js:13:20)
+    at Module._compile (node:internal/modules/cjs/loader:1358:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+2025-02-25 23:35:45 [31merror[39m: uncaughtException: upload is not defined
+ReferenceError: upload is not defined
+    at Object.<anonymous> (D:\react\pharma-portal-server\api\users\auth.routes.js:26:3)
+    at Module._compile (node:internal/modules/cjs/loader:1358:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+    at Module.load (node:internal/modules/cjs/loader:1208:32)
+    at Module._load (node:internal/modules/cjs/loader:1024:12)
+    at Module.require (node:internal/modules/cjs/loader:1233:19)
+    at require (node:internal/modules/helpers:179:18)
+    at Object.<anonymous> (D:\react\pharma-portal-server\routes\index.js:13:20)
+    at Module._compile (node:internal/modules/cjs/loader:1358:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+2025-02-26 15:12:34 [31merror[39m: uncaughtException: path is not defined
+ReferenceError: path is not defined
+    at Object.<anonymous> (D:\react\pharma-portal-server\server.js:33:36)
+    at Module._compile (node:internal/modules/cjs/loader:1358:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+    at Module.load (node:internal/modules/cjs/loader:1208:32)
+    at Module._load (node:internal/modules/cjs/loader:1024:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:174:12)
+    at node:internal/main/run_main_module:28:49
+2025-02-26 19:54:34 [31merror[39m: uncaughtException: Route.get() requires a callback function but got a [object Undefined]
+Error: Route.get() requires a callback function but got a [object Undefined]
+    at Route.<computed> [as get] (D:\react\pharma-portal-server\node_modules\express\lib\router\route.js:216:15)
+    at proto.<computed> [as get] (D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:521:19)
+    at Object.<anonymous> (D:\react\pharma-portal-server\api\users\auth.routes.js:32:8)
+    at Module._compile (node:internal/modules/cjs/loader:1358:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+    at Module.load (node:internal/modules/cjs/loader:1208:32)
+    at Module._load (node:internal/modules/cjs/loader:1024:12)
+    at Module.require (node:internal/modules/cjs/loader:1233:19)
+    at require (node:internal/modules/helpers:179:18)
+    at Object.<anonymous> (D:\react\pharma-portal-server\routes\index.js:13:20)
+2025-02-26 21:59:58 [31merror[39m: uncaughtException: mongoose is not defined
+ReferenceError: mongoose is not defined
+    at Object.<anonymous> (D:\react\pharma-portal-server\api\chat\chat.model.js:9:13)
+    at Module._compile (node:internal/modules/cjs/loader:1358:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+    at Module.load (node:internal/modules/cjs/loader:1208:32)
+    at Module._load (node:internal/modules/cjs/loader:1024:12)
+    at Module.require (node:internal/modules/cjs/loader:1233:19)
+    at require (node:internal/modules/helpers:179:18)
+    at Object.<anonymous> (D:\react\pharma-portal-server\api\chat\chat.controller.js:2:14)
+    at Module._compile (node:internal/modules/cjs/loader:1358:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+2025-02-26 22:00:53 [31merror[39m: uncaughtException: mongoose is not defined
+ReferenceError: mongoose is not defined
+    at Object.<anonymous> (D:\react\pharma-portal-server\api\chat\chat.model.js:9:13)
+    at Module._compile (node:internal/modules/cjs/loader:1358:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+    at Module.load (node:internal/modules/cjs/loader:1208:32)
+    at Module._load (node:internal/modules/cjs/loader:1024:12)
+    at Module.require (node:internal/modules/cjs/loader:1233:19)
+    at require (node:internal/modules/helpers:179:18)
+    at Object.<anonymous> (D:\react\pharma-portal-server\api\chat\chat.controller.js:2:14)
+    at Module._compile (node:internal/modules/cjs/loader:1358:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+2025-02-26 22:01:09 [31merror[39m: uncaughtException: mongoose is not defined
+ReferenceError: mongoose is not defined
+    at Object.<anonymous> (D:\react\pharma-portal-server\api\chat\chat.model.js:9:13)
+    at Module._compile (node:internal/modules/cjs/loader:1358:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+    at Module.load (node:internal/modules/cjs/loader:1208:32)
+    at Module._load (node:internal/modules/cjs/loader:1024:12)
+    at Module.require (node:internal/modules/cjs/loader:1233:19)
+    at require (node:internal/modules/helpers:179:18)
+    at Object.<anonymous> (D:\react\pharma-portal-server\api\chat\chat.controller.js:2:14)
+    at Module._compile (node:internal/modules/cjs/loader:1358:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+2025-02-26 22:01:16 [31merror[39m: uncaughtException: mongoose is not defined
+ReferenceError: mongoose is not defined
+    at Object.<anonymous> (D:\react\pharma-portal-server\api\chat\chat.model.js:9:13)
+    at Module._compile (node:internal/modules/cjs/loader:1358:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+    at Module.load (node:internal/modules/cjs/loader:1208:32)
+    at Module._load (node:internal/modules/cjs/loader:1024:12)
+    at Module.require (node:internal/modules/cjs/loader:1233:19)
+    at require (node:internal/modules/helpers:179:18)
+    at Object.<anonymous> (D:\react\pharma-portal-server\api\chat\chat.controller.js:2:14)
+    at Module._compile (node:internal/modules/cjs/loader:1358:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+2025-02-26 22:01:28 [31merror[39m: uncaughtException: mongoose is not defined
+ReferenceError: mongoose is not defined
+    at Object.<anonymous> (D:\react\pharma-portal-server\api\chat\chat.model.js:9:13)
+    at Module._compile (node:internal/modules/cjs/loader:1358:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+    at Module.load (node:internal/modules/cjs/loader:1208:32)
+    at Module._load (node:internal/modules/cjs/loader:1024:12)
+    at Module.require (node:internal/modules/cjs/loader:1233:19)
+    at require (node:internal/modules/helpers:179:18)
+    at Object.<anonymous> (D:\react\pharma-portal-server\api\chat\chat.controller.js:2:14)
+    at Module._compile (node:internal/modules/cjs/loader:1358:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+2025-02-26 22:01:35 [31merror[39m: uncaughtException: mongoose is not defined
+ReferenceError: mongoose is not defined
+    at Object.<anonymous> (D:\react\pharma-portal-server\api\chat\chat.model.js:9:13)
+    at Module._compile (node:internal/modules/cjs/loader:1358:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+    at Module.load (node:internal/modules/cjs/loader:1208:32)
+    at Module._load (node:internal/modules/cjs/loader:1024:12)
+    at Module.require (node:internal/modules/cjs/loader:1233:19)
+    at require (node:internal/modules/helpers:179:18)
+    at Object.<anonymous> (D:\react\pharma-portal-server\api\chat\chat.controller.js:2:14)
+    at Module._compile (node:internal/modules/cjs/loader:1358:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+2025-02-26 22:01:43 [31merror[39m: uncaughtException: mongoose is not defined
+ReferenceError: mongoose is not defined
+    at Object.<anonymous> (D:\react\pharma-portal-server\api\chat\chat.model.js:9:13)
+    at Module._compile (node:internal/modules/cjs/loader:1358:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+    at Module.load (node:internal/modules/cjs/loader:1208:32)
+    at Module._load (node:internal/modules/cjs/loader:1024:12)
+    at Module.require (node:internal/modules/cjs/loader:1233:19)
+    at require (node:internal/modules/helpers:179:18)
+    at Object.<anonymous> (D:\react\pharma-portal-server\api\chat\chat.controller.js:2:14)
+    at Module._compile (node:internal/modules/cjs/loader:1358:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+2025-02-26 22:08:16 [31merror[39m: uncaughtException: mongoose is not defined
+ReferenceError: mongoose is not defined
+    at Object.<anonymous> (D:\react\pharma-portal-server\api\chat\chat.model.js:9:13)
+    at Module._compile (node:internal/modules/cjs/loader:1358:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+    at Module.load (node:internal/modules/cjs/loader:1208:32)
+    at Module._load (node:internal/modules/cjs/loader:1024:12)
+    at Module.require (node:internal/modules/cjs/loader:1233:19)
+    at require (node:internal/modules/helpers:179:18)
+    at Object.<anonymous> (D:\react\pharma-portal-server\api\chat\chat.controller.js:2:14)
+    at Module._compile (node:internal/modules/cjs/loader:1358:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+2025-02-26 22:15:58 [31merror[39m: uncaughtException: Route.get() requires a callback function but got a [object Undefined]
+Error: Route.get() requires a callback function but got a [object Undefined]
+    at Route.<computed> [as get] (D:\react\pharma-portal-server\node_modules\express\lib\router\route.js:216:15)
+    at proto.<computed> [as get] (D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:521:19)
+    at Object.<anonymous> (D:\react\pharma-portal-server\api\chat\chat.routes.js:11:8)
+    at Module._compile (node:internal/modules/cjs/loader:1358:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+    at Module.load (node:internal/modules/cjs/loader:1208:32)
+    at Module._load (node:internal/modules/cjs/loader:1024:12)
+    at Module.require (node:internal/modules/cjs/loader:1233:19)
+    at require (node:internal/modules/helpers:179:18)
+    at Object.<anonymous> (D:\react\pharma-portal-server\routes\index.js:19:20)
+2025-02-27 02:26:37 [31merror[39m: uncaughtException: Unexpected end of input
+D:\react\pharma-portal-server\api\chat\chat.controller.js:113
+
+
+
+SyntaxError: Unexpected end of input
+    at wrapSafe (node:internal/modules/cjs/loader:1281:20)
+    at Module._compile (node:internal/modules/cjs/loader:1321:27)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+    at Module.load (node:internal/modules/cjs/loader:1208:32)
+    at Module._load (node:internal/modules/cjs/loader:1024:12)
+    at Module.require (node:internal/modules/cjs/loader:1233:19)
+    at require (node:internal/modules/helpers:179:18)
+    at Object.<anonymous> (D:\react\pharma-portal-server\api\chat\chat.routes.js:7:24)
+    at Module._compile (node:internal/modules/cjs/loader:1358:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+2025-03-03 13:49:27 [31merror[39m: uncaughtException: corsOptions is not defined
+ReferenceError: corsOptions is not defined
+    at Object.<anonymous> (D:\react\pharma-portal-server\server.js:29:14)
+    at Module._compile (node:internal/modules/cjs/loader:1358:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+    at Module.load (node:internal/modules/cjs/loader:1208:32)
+    at Module._load (node:internal/modules/cjs/loader:1024:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:174:12)
+    at node:internal/main/run_main_module:28:49
+2025-03-04 21:37:37 [31merror[39m: uncaughtException: corsOptions is not defined
+ReferenceError: corsOptions is not defined
+    at Object.<anonymous> (D:\react\pharma-portal-server\server.js:29:14)
+    at Module._compile (node:internal/modules/cjs/loader:1358:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+    at Module.load (node:internal/modules/cjs/loader:1208:32)
+    at Module._load (node:internal/modules/cjs/loader:1024:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:174:12)
+    at node:internal/main/run_main_module:28:49
+2025-03-05 12:13:41 [31merror[39m: uncaughtException: corsOptions is not defined
+ReferenceError: corsOptions is not defined
+    at Object.<anonymous> (D:\react\pharma-portal-server\server.js:29:14)
+    at Module._compile (node:internal/modules/cjs/loader:1358:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+    at Module.load (node:internal/modules/cjs/loader:1208:32)
+    at Module._load (node:internal/modules/cjs/loader:1024:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:174:12)
+    at node:internal/main/run_main_module:28:49
+2025-03-07 15:27:51 [31merror[39m: uncaughtException: Cannot set headers after they are sent to the client
+Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at ServerResponse.setHeader (node:_http_outgoing:659:11)
+    at ServerResponse.header (D:\react\pharma-portal-server\node_modules\express\lib\response.js:794:10)
+    at ServerResponse.send (D:\react\pharma-portal-server\node_modules\express\lib\response.js:174:12)
+    at ServerResponse.json (D:\react\pharma-portal-server\node_modules\express\lib\response.js:278:15)
+    at updateQuestion (D:\react\pharma-portal-server\api\questions\question.controller.js:96:20)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+2025-03-07 22:38:23 [31merror[39m: uncaughtException: req.query.type?.split is not a function
+TypeError: req.query.type?.split is not a function
+    at getOrders (D:\react\pharma-portal-server\api\orders\order.controller.js:168:27)
+    at Layer.handle [as handle_request] (D:\react\pharma-portal-server\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\react\pharma-portal-server\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\react\pharma-portal-server\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\react\pharma-portal-server\node_modules\express\lib\router\layer.js:95:5)
+    at D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:280:10)
+    at Function.handle (D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:175:3)
+    at router (D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:47:12)
+2025-03-07 22:39:32 [31merror[39m: uncaughtException: req.query.type?.split is not a function
+TypeError: req.query.type?.split is not a function
+    at getOrders (D:\react\pharma-portal-server\api\orders\order.controller.js:193:27)
+    at Layer.handle [as handle_request] (D:\react\pharma-portal-server\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\react\pharma-portal-server\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\react\pharma-portal-server\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\react\pharma-portal-server\node_modules\express\lib\router\layer.js:95:5)
+    at D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:280:10)
+    at Function.handle (D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:175:3)
+    at router (D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:47:12)
+2025-03-07 22:39:59 [31merror[39m: uncaughtException: req.query.type?.split is not a function
+TypeError: req.query.type?.split is not a function
+    at getOrders (D:\react\pharma-portal-server\api\orders\order.controller.js:193:27)
+    at Layer.handle [as handle_request] (D:\react\pharma-portal-server\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\react\pharma-portal-server\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\react\pharma-portal-server\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\react\pharma-portal-server\node_modules\express\lib\router\layer.js:95:5)
+    at D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:280:10)
+    at Function.handle (D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:175:3)
+    at router (D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:47:12)
+2025-03-07 22:40:10 [31merror[39m: uncaughtException: req.query.type?.split is not a function
+TypeError: req.query.type?.split is not a function
+    at getOrders (D:\react\pharma-portal-server\api\orders\order.controller.js:193:27)
+    at Layer.handle [as handle_request] (D:\react\pharma-portal-server\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\react\pharma-portal-server\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\react\pharma-portal-server\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\react\pharma-portal-server\node_modules\express\lib\router\layer.js:95:5)
+    at D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:280:10)
+    at Function.handle (D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:175:3)
+    at router (D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:47:12)
+2025-03-07 22:40:43 [31merror[39m: uncaughtException: req.query.type?.split is not a function
+TypeError: req.query.type?.split is not a function
+    at getOrders (D:\react\pharma-portal-server\api\orders\order.controller.js:193:27)
+    at Layer.handle [as handle_request] (D:\react\pharma-portal-server\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\react\pharma-portal-server\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\react\pharma-portal-server\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\react\pharma-portal-server\node_modules\express\lib\router\layer.js:95:5)
+    at D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:280:10)
+    at Function.handle (D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:175:3)
+    at router (D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:47:12)
+2025-03-11 00:59:33 [31merror[39m: uncaughtException: req.query.type?.split is not a function
+TypeError: req.query.type?.split is not a function
+    at getOrders (D:\react\pharma-portal-server\api\orders\order.controller.js:193:27)
+    at Layer.handle [as handle_request] (D:\react\pharma-portal-server\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\react\pharma-portal-server\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\react\pharma-portal-server\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\react\pharma-portal-server\node_modules\express\lib\router\layer.js:95:5)
+    at D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:280:10)
+    at Function.handle (D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:175:3)
+    at router (D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:47:12)
+2025-03-11 01:11:22 [31merror[39m: uncaughtException: req.query.type?.split is not a function
+TypeError: req.query.type?.split is not a function
+    at getOrders (D:\react\pharma-portal-server\api\orders\order.controller.js:193:27)
+    at Layer.handle [as handle_request] (D:\react\pharma-portal-server\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\react\pharma-portal-server\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\react\pharma-portal-server\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\react\pharma-portal-server\node_modules\express\lib\router\layer.js:95:5)
+    at D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:280:10)
+    at Function.handle (D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:175:3)
+    at router (D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:47:12)
+2025-03-11 01:16:02 [31merror[39m: uncaughtException: req.query.type?.split is not a function
+TypeError: req.query.type?.split is not a function
+    at getOrders (D:\react\pharma-portal-server\api\orders\order.controller.js:193:27)
+    at Layer.handle [as handle_request] (D:\react\pharma-portal-server\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\react\pharma-portal-server\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\react\pharma-portal-server\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\react\pharma-portal-server\node_modules\express\lib\router\layer.js:95:5)
+    at D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:280:10)
+    at Function.handle (D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:175:3)
+    at router (D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:47:12)
+2025-03-11 01:22:20 [31merror[39m: uncaughtException: req.query.type?.split is not a function
+TypeError: req.query.type?.split is not a function
+    at getOrders (D:\react\pharma-portal-server\api\orders\order.controller.js:193:27)
+    at Layer.handle [as handle_request] (D:\react\pharma-portal-server\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\react\pharma-portal-server\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\react\pharma-portal-server\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\react\pharma-portal-server\node_modules\express\lib\router\layer.js:95:5)
+    at D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:280:10)
+    at Function.handle (D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:175:3)
+    at router (D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:47:12)
+2025-03-11 01:44:54 [31merror[39m: uncaughtException: req.query.type?.split is not a function
+TypeError: req.query.type?.split is not a function
+    at getOrders (D:\react\pharma-portal-server\api\orders\order.controller.js:193:27)
+    at Layer.handle [as handle_request] (D:\react\pharma-portal-server\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\react\pharma-portal-server\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\react\pharma-portal-server\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\react\pharma-portal-server\node_modules\express\lib\router\layer.js:95:5)
+    at D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:280:10)
+    at Function.handle (D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:175:3)
+    at router (D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:47:12)
+2025-03-11 01:45:57 [31merror[39m: uncaughtException: req.query.type?.split is not a function
+TypeError: req.query.type?.split is not a function
+    at getOrders (D:\react\pharma-portal-server\api\orders\order.controller.js:193:27)
+    at Layer.handle [as handle_request] (D:\react\pharma-portal-server\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\react\pharma-portal-server\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\react\pharma-portal-server\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\react\pharma-portal-server\node_modules\express\lib\router\layer.js:95:5)
+    at D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:280:10)
+    at Function.handle (D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:175:3)
+    at router (D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:47:12)
+2025-03-11 13:40:49 [31merror[39m: uncaughtException: req.query.type?.split is not a function
+TypeError: req.query.type?.split is not a function
+    at getOrders (D:\react\pharma-portal-server\api\orders\order.controller.js:193:27)
+    at Layer.handle [as handle_request] (D:\react\pharma-portal-server\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\react\pharma-portal-server\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\react\pharma-portal-server\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\react\pharma-portal-server\node_modules\express\lib\router\layer.js:95:5)
+    at D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:280:10)
+    at Function.handle (D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:175:3)
+    at router (D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:47:12)
+2025-03-11 13:51:17 [31merror[39m: uncaughtException: req.query.type?.split is not a function
+TypeError: req.query.type?.split is not a function
+    at getOrders (D:\react\pharma-portal-server\api\orders\order.controller.js:193:27)
+    at Layer.handle [as handle_request] (D:\react\pharma-portal-server\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\react\pharma-portal-server\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\react\pharma-portal-server\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\react\pharma-portal-server\node_modules\express\lib\router\layer.js:95:5)
+    at D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:280:10)
+    at Function.handle (D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:175:3)
+    at router (D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:47:12)
+2025-03-11 13:52:37 [31merror[39m: uncaughtException: req.query.type?.split is not a function
+TypeError: req.query.type?.split is not a function
+    at getOrders (D:\react\pharma-portal-server\api\orders\order.controller.js:193:27)
+    at Layer.handle [as handle_request] (D:\react\pharma-portal-server\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\react\pharma-portal-server\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\react\pharma-portal-server\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\react\pharma-portal-server\node_modules\express\lib\router\layer.js:95:5)
+    at D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:280:10)
+    at Function.handle (D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:175:3)
+    at router (D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:47:12)
+2025-03-11 21:09:06 [31merror[39m: uncaughtException: Cannot access 'id' before initialization
+ReferenceError: Cannot access 'id' before initialization
+    at updateProfileSetting (D:\react\pharma-portal-server\api\users\user.controller.js:632:26)
+    at Layer.handle [as handle_request] (D:\react\pharma-portal-server\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\react\pharma-portal-server\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\react\pharma-portal-server\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\react\pharma-portal-server\node_modules\express\lib\router\layer.js:95:5)
+    at D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:280:10)
+    at Function.handle (D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:175:3)
+    at router (D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:47:12)
+2025-03-11 21:09:30 [31merror[39m: uncaughtException: Cannot access 'id' before initialization
+ReferenceError: Cannot access 'id' before initialization
+    at updateProfileSetting (D:\react\pharma-portal-server\api\users\user.controller.js:632:26)
+    at Layer.handle [as handle_request] (D:\react\pharma-portal-server\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\react\pharma-portal-server\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\react\pharma-portal-server\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\react\pharma-portal-server\node_modules\express\lib\router\layer.js:95:5)
+    at D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:280:10)
+    at Function.handle (D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:175:3)
+    at router (D:\react\pharma-portal-server\node_modules\express\lib\router\index.js:47:12)
+2025-03-13 21:26:43 [31merror[39m: uncaughtException: corsOptions is not defined
+ReferenceError: corsOptions is not defined
+    at Object.<anonymous> (D:\react\pharma-portal-server\server.js:29:14)
+    at Module._compile (node:internal/modules/cjs/loader:1358:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+    at Module.load (node:internal/modules/cjs/loader:1208:32)
+    at Module._load (node:internal/modules/cjs/loader:1024:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:174:12)
+    at node:internal/main/run_main_module:28:49
+2025-03-16 16:01:34 [31merror[39m: uncaughtException: photo is not defined
+ReferenceError: photo is not defined
+    at Object.<anonymous> (D:\react\mobil-tech-admin\pharma-portal-server\api\users\auth.routes.js:11:40)
+    at Module._compile (node:internal/modules/cjs/loader:1358:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+    at Module.load (node:internal/modules/cjs/loader:1208:32)
+    at Module._load (node:internal/modules/cjs/loader:1024:12)
+    at Module.require (node:internal/modules/cjs/loader:1233:19)
+    at require (node:internal/modules/helpers:179:18)
+    at Object.<anonymous> (D:\react\mobil-tech-admin\pharma-portal-server\routes\index.js:6:20)
+    at Module._compile (node:internal/modules/cjs/loader:1358:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+2025-03-17 23:33:44 [31merror[39m: uncaughtException: Route.get() requires a callback function but got a [object Undefined]
+Error: Route.get() requires a callback function but got a [object Undefined]
+    at Route.<computed> [as get] (D:\react\mobil-tech-admin\pharma-portal-server\node_modules\express\lib\router\route.js:216:15)
+    at proto.<computed> [as get] (D:\react\mobil-tech-admin\pharma-portal-server\node_modules\express\lib\router\index.js:521:19)
+    at Object.<anonymous> (D:\react\mobil-tech-admin\pharma-portal-server\api\roles\roles.routes.js:8:8)
+    at Module._compile (node:internal/modules/cjs/loader:1358:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+    at Module.load (node:internal/modules/cjs/loader:1208:32)
+    at Module._load (node:internal/modules/cjs/loader:1024:12)
+    at Module.require (node:internal/modules/cjs/loader:1233:19)
+    at require (node:internal/modules/helpers:179:18)
+    at Object.<anonymous> (D:\react\mobil-tech-admin\pharma-portal-server\routes\index.js:8:21)
+2025-03-17 23:34:24 [31merror[39m: uncaughtException: Route.get() requires a callback function but got a [object Undefined]
+Error: Route.get() requires a callback function but got a [object Undefined]
+    at Route.<computed> [as get] (D:\react\mobil-tech-admin\pharma-portal-server\node_modules\express\lib\router\route.js:216:15)
+    at proto.<computed> [as get] (D:\react\mobil-tech-admin\pharma-portal-server\node_modules\express\lib\router\index.js:521:19)
+    at Object.<anonymous> (D:\react\mobil-tech-admin\pharma-portal-server\api\roles\roles.routes.js:8:8)
+    at Module._compile (node:internal/modules/cjs/loader:1358:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+    at Module.load (node:internal/modules/cjs/loader:1208:32)
+    at Module._load (node:internal/modules/cjs/loader:1024:12)
+    at Module.require (node:internal/modules/cjs/loader:1233:19)
+    at require (node:internal/modules/helpers:179:18)
+    at Object.<anonymous> (D:\react\mobil-tech-admin\pharma-portal-server\routes\index.js:8:21)
+2025-03-17 23:39:26 [31merror[39m: uncaughtException: Unexpected token ','
+D:\react\mobil-tech-admin\pharma-portal-server\api\roles\roles.controller.js:145
+      return res.status(404).json({ success: "false",, message: "roles not found" });
+                                                     ^
+
+SyntaxError: Unexpected token ','
+    at wrapSafe (node:internal/modules/cjs/loader:1281:20)
+    at Module._compile (node:internal/modules/cjs/loader:1321:27)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+    at Module.load (node:internal/modules/cjs/loader:1208:32)
+    at Module._load (node:internal/modules/cjs/loader:1024:12)
+    at Module.require (node:internal/modules/cjs/loader:1233:19)
+    at require (node:internal/modules/helpers:179:18)
+    at Object.<anonymous> (D:\react\mobil-tech-admin\pharma-portal-server\api\roles\roles.routes.js:3:25)
+    at Module._compile (node:internal/modules/cjs/loader:1358:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+2025-03-17 23:39:28 [31merror[39m: uncaughtException: Unexpected string
+D:\react\mobil-tech-admin\pharma-portal-server\api\roles\roles.controller.js:145
+      return res.status(404).json({ success: false",, message: "roles not found" });
+                                                  ^^^^^^^^^^^^^^
+
+SyntaxError: Unexpected string
+    at wrapSafe (node:internal/modules/cjs/loader:1281:20)
+    at Module._compile (node:internal/modules/cjs/loader:1321:27)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+    at Module.load (node:internal/modules/cjs/loader:1208:32)
+    at Module._load (node:internal/modules/cjs/loader:1024:12)
+    at Module.require (node:internal/modules/cjs/loader:1233:19)
+    at require (node:internal/modules/helpers:179:18)
+    at Object.<anonymous> (D:\react\mobil-tech-admin\pharma-portal-server\api\roles\roles.routes.js:3:25)
+    at Module._compile (node:internal/modules/cjs/loader:1358:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+2025-03-19 20:52:26 [31merror[39m: uncaughtException: listen EADDRINUSE: address already in use :::5000
+Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1898:16)
+    at listenInCluster (node:net:1946:12)
+    at Server.listen (node:net:2044:7)
+    at Function.listen (D:\react\mobil-tech-admin\pharma-portal-server\node_modules\express\lib\application.js:635:24)
+    at Object.<anonymous> (D:\react\mobil-tech-admin\pharma-portal-server\server.js:44:5)
+    at Module._compile (node:internal/modules/cjs/loader:1358:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+    at Module.load (node:internal/modules/cjs/loader:1208:32)
+    at Module._load (node:internal/modules/cjs/loader:1024:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:174:12)
+2025-03-19 20:52:48 [31merror[39m: uncaughtException: listen EADDRINUSE: address already in use :::5000
+Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1898:16)
+    at listenInCluster (node:net:1946:12)
+    at Server.listen (node:net:2044:7)
+    at Function.listen (D:\react\mobil-tech-admin\pharma-portal-server\node_modules\express\lib\application.js:635:24)
+    at Object.<anonymous> (D:\react\mobil-tech-admin\pharma-portal-server\server.js:44:5)
+    at Module._compile (node:internal/modules/cjs/loader:1358:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+    at Module.load (node:internal/modules/cjs/loader:1208:32)
+    at Module._load (node:internal/modules/cjs/loader:1024:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:174:12)
+2025-03-24 19:41:16 [31merror[39m: uncaughtException: listen EADDRINUSE: address already in use :::5000
+Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1898:16)
+    at listenInCluster (node:net:1946:12)
+    at Server.listen (node:net:2044:7)
+    at Function.listen (D:\react\mobil-tech-admin\pharma-portal-server\node_modules\express\lib\application.js:635:24)
+    at Object.<anonymous> (D:\react\mobil-tech-admin\pharma-portal-server\server.js:44:5)
+    at Module._compile (node:internal/modules/cjs/loader:1358:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+    at Module.load (node:internal/modules/cjs/loader:1208:32)
+    at Module._load (node:internal/modules/cjs/loader:1024:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:174:12)
+2025-03-24 19:41:22 [31merror[39m: uncaughtException: listen EADDRINUSE: address already in use :::5000
+Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1898:16)
+    at listenInCluster (node:net:1946:12)
+    at Server.listen (node:net:2044:7)
+    at Function.listen (D:\react\mobil-tech-admin\pharma-portal-server\node_modules\express\lib\application.js:635:24)
+    at Object.<anonymous> (D:\react\mobil-tech-admin\pharma-portal-server\server.js:44:5)
+    at Module._compile (node:internal/modules/cjs/loader:1358:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+    at Module.load (node:internal/modules/cjs/loader:1208:32)
+    at Module._load (node:internal/modules/cjs/loader:1024:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:174:12)
