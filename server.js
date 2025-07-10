@@ -12,7 +12,12 @@ const app = express();
 const frontendUrl = process.env.FRONTEND_URL;
 console.log("FRONTEND_URL from .env:", frontendUrl);
 
-const allowedOrigins = ["http://localhost:5173", "http://localhost:3000"];
+// Allow localhost & frontend url
+const allowedOrigins = [
+  "http://localhost:5173",
+  "http://localhost:3000",
+  frontendUrl,
+];
 
 const corsOptions = {
   origin: function (origin, callback) {
@@ -34,7 +39,21 @@ app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 // Connect to MongoDB
 connectDB();
 
+// Default route for "/"
+app.get("/", (req, res) => {
+  res.send("✅ Server is running on Vercel 🚀");
+});
+
 // API Routes
 app.use("/api/v1", apiRoutes);
 
+// Export for Vercel
 module.exports = app;
+
+// Only listen locally
+if (require.main === module) {
+  const PORT = process.env.PORT || 5000;
+  app.listen(PORT, () => {
+    console.log(`✅ Server is running on http://localhost:${PORT}`);
+  });
+}
