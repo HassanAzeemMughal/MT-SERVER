@@ -15,7 +15,7 @@ console.log("✅ FRONTEND_URL from .env:", frontendUrl);
 const allowedOrigins = [
   "http://localhost:5173",
   "http://localhost:3000",
-  frontendUrl,
+  frontendUrl.replace(/\/$/, ""), // remove trailing slash
 ];
 
 console.log("✅ Allowed origins:", allowedOrigins);
