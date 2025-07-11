@@ -1,4 +1,3 @@
-// src/api/categories/category.routes.js
 const express = require("express");
 const rolesController = require("./roles.controller");
 const router = express.Router();

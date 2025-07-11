@@ -8,37 +8,44 @@ const createCategory = async (req, res) => {
   try {
     const categoryData = req.body;
     const imageFile = req.file;
-
+    console.log("======categoryData", categoryData);
+    console.log("======imageFile", imageFile);
+    // Validate required fields
     if (!categoryData.title) {
-      return res
-        .status(400)
-        .json({ success: "false", message: "Title is required." });
+      return res.json({
+        success: false,
+        message: "Title is required.",
+      });
     }
+
     categoryData.slug = createSlug(categoryData.title);
     const existingCategory = await Category.findOne({
       slug: categoryData.slug,
     });
     if (existingCategory) {
-      return res.status(400).json({
-        success: "false",
+      return res.json({
+        success: false,
         message: "Category with this slug already exists.",
       });
     }
 
-    categoryData.image = saveFile(imageFile);
+    if (imageFile) {
+      categoryData.image = saveFile(imageFile);
+    }
 
     categoryData.parent = categoryData.parent
       ? new mongoose.Types.ObjectId(categoryData.parent)
       : null;
+
     const category = await categoryService.createCategory(categoryData);
     res.status(201).json({
-      success: "true",
+      success: true,
       message: "Category created successfully",
       category,
     });
   } catch (error) {
     res.status(500).json({
-      success: "false",
+      success: false,
       message: "An unexpected error occurred while creating the category.",
       error: error.message,
     });
@@ -94,6 +101,7 @@ const getCategories = async (req, res) => {
 const getParentCategories = async (req, res) => {
   try {
     const categories = await categoryService.getParentCategories();
+
     res.status(200).json({ categories });
   } catch (error) {
     res.status(500).json({ error: error.message });
@@ -123,9 +131,7 @@ const updateCategory = async (req, res) => {
     const imageFile = req.file;
 
     if (!categoryData.title) {
-      return res
-        .status(400)
-        .json({ success: "false", message: "Title is required." });
+      return res.json({ success: false, message: "Title is required." });
     }
 
     categoryData.slug = createSlug(categoryData.title);
@@ -136,31 +142,56 @@ const updateCategory = async (req, res) => {
     });
 
     if (existingCategory) {
-      return res.status(400).json({
-        success: "false",
+      return res.json({
+        success: false,
         message: "Category with this slug already exists.",
       });
     }
 
-    categoryData.image = saveFile(imageFile);
-
-    categoryData.parent = categoryData.parent
-      ? new mongoose.Types.ObjectId(categoryData.parent)
-      : null;
-
-    const category = await categoryService.updateCategory(id, categoryData);
-    if (!category) {
-      return res
-        .status(404)
-        .json({ success: "false", message: "Category not found" });
+    if (imageFile) {
+      categoryData.image = saveFile(imageFile);
     }
+
+    // Validate and convert parent if provided
+    if (categoryData.parent) {
+      if (!mongoose.Types.ObjectId.isValid(categoryData.parent)) {
+        return res.status(400).json({
+          success: "false",
+          message: `Invalid parent category id: '${categoryData.parent}'.`,
+        });
+      }
+
+      const parentCategory = await Category.findById(categoryData.parent);
+      if (!parentCategory) {
+        return res.json({
+          success: false,
+          message: `Parent category with id '${categoryData.parent}' not found.`,
+        });
+      }
+
+      categoryData.parent = parentCategory._id;
+    } else {
+      categoryData.parent = null; // explicitly set null if no parent
+    }
+    const updatedCategory = await categoryService.updateCategory(
+      id,
+      categoryData
+    );
+
+    if (!updatedCategory) {
+      return res.json({ success: false, message: "Category not found" });
+    }
+
     res.status(200).json({
-      success: "true",
+      success: true,
       message: "Category updated successfully",
-      category,
+      updatedCategory,
     });
   } catch (error) {
-    res.status(500).json({ error: error.message });
+    return res.json({
+      success: false,
+      message: error.message || "Internal Server Error",
+    });
   }
 };
 

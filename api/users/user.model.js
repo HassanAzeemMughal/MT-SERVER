@@ -21,7 +21,7 @@ const userSchema = new mongoose.Schema(
     country: { type: String },
     note: { type: String },
     photo: { type: String },
-    status: { type: String },
+    status: { type: String, default: "active" },
   },
   { timestamps: true }
 );

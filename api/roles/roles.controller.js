@@ -9,6 +9,13 @@ const createRoles = async (req, res) => {
   const { name, permissions } = req.body;
 
   try {
+    if (!name || typeof name !== "string") {
+      return res.json({
+        success: "false",
+        message: "Role name is required.",
+      });
+    }
+
     if (!permissions || permissions.length === 0) {
       return res.status(400).json({
         success: "false",
@@ -157,17 +164,27 @@ const updateRoles = async (req, res) => {
 // Controller to delete a category
 const deleteRoles = async (req, res) => {
   try {
-    const deleteThis = await rolesService.deleteRoles(req.params.id);
-    if (!deleteThis) {
-      return res
-        .status(404)
-        .json({ success: "false", message: "Roles not found" });
+    const deleted = await rolesService.deleteRoles(req.params.id);
+
+    if (!deleted) {
+      return res.json({
+        success: false,
+        message: "Role not found",
+      });
     }
-    res
-      .status(200)
-      .json({ success: "true", message: "Roles deleted successfully" });
+
+    return res.json({
+      success: true,
+      message: "Role deleted successfully",
+    });
   } catch (error) {
-    res.status(500).json({ error: error.message });
+    console.error("Error deleting role:", error);
+
+    return res.status(500).json({
+      success: false,
+      message: "An unexpected error occurred while deleting the role.",
+      error: error.message,
+    });
   }
 };
 

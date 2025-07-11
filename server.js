@@ -16,7 +16,8 @@ console.log("✅ FRONTEND_URL:", frontendUrl);
 const allowedOrigins = [
   "http://localhost:5173",
   "http://localhost:3000",
-  frontendUrl,
+  "https://mt-dashboard-ten.vercel.app",
+  "https://mt-frontend-puce.vercel.app",
 ];
 
 console.log("✅ Allowed origins:", allowedOrigins);

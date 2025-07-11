@@ -5,7 +5,20 @@ const router = express.Router();
 const multer = require("multer");
 const upload = multer({ storage: multer.memoryStorage() });
 
-router.get("/parent", categoryController.getParentCategories); // This is now safe
+// Only for Dashboard Routes
+router.post("/add", upload.single("image"), categoryController.createCategory);
+router.put(
+  "/:id([0-9a-fA-F]{24})",
+  upload.single("image"),
+  categoryController.updateCategory
+);
+router.delete(
+  "/delete/:id([0-9a-fA-F]{24})",
+  categoryController.deleteCategory
+);
+// Only for Dashboard Routes
+
+router.get("/parent", categoryController.getParentCategories);
 
 // Ensure `:categorySlug` only matches valid slugs (e.g., letters, numbers, hyphens)
 router.get("/fetch", categoryController.fetchCategoriesWithHierarchy);
@@ -18,21 +31,7 @@ router.get(
 //   categoryController.getSubCategoryWithProducts
 // );
 
-router.post(
-  "/add",
-  upload.array("image", 10),
-  categoryController.createCategory
-);
 router.get("/", categoryController.getCategories);
-router.get("/:id([0-9a-fA-F]{24})", categoryController.getCategoryById); // Ensures only MongoDB ObjectIds match
-router.put(
-  "/:id([0-9a-fA-F]{24})",
-  upload.single("image"),
-  categoryController.updateCategory
-);
-router.delete(
-  "/delete/:id([0-9a-fA-F]{24})",
-  categoryController.deleteCategory
-);
+router.get("/edit/:id([0-9a-fA-F]{24})", categoryController.getCategoryById);
 
 module.exports = router;

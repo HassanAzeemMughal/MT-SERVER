@@ -1,3 +1,4 @@
+const mongoose = require("mongoose");
 const User = require("./user.model");
 const Roles = require("../roles/roles.model");
 const userService = require("./auth.service");
@@ -12,7 +13,194 @@ const crypto = require("crypto");
 const EmailVerification = require("./EmailVerification.model");
 const ResetPassword = require("./reset-password.model");
 const { check, validationResult } = require("express-validator");
+const { saveFile } = require("../../util/Helper");
 const baseUrl = process.env.REDIRECT_PAGE;
+
+const userAdd = async (req, res) => {
+  try {
+    const { firstName, lastName, email, password, dob, role, status } =
+      req.body;
+
+    // ✅ Email format
+    const emailRegex = /^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/;
+    if (!emailRegex.test(email)) {
+      return res.json({
+        success: false,
+        message: "Invalid email format",
+      });
+    }
+
+    // ✅ Check in parallel (better performance)
+    const [existingUser, roleData] = await Promise.all([
+      User.findOne({ email }),
+      Roles.findById(role),
+    ]);
+
+    if (existingUser) {
+      return res.json({
+        success: false,
+        message: "User with the same email already exists",
+      });
+    }
+
+    if (!roleData) {
+      return res.status(404).json({
+        success: false,
+        message: "Role not found",
+      });
+    }
+
+    const photo = req.file ? saveFile(req.file) : null;
+
+    const hashedPassword = await bcrypt.hash(password, 10);
+
+    let payload = {
+      firstName: firstName,
+      lastName: lastName,
+      email,
+      dob,
+      password: hashedPassword,
+      role: roleData._id,
+      status,
+      photo,
+    };
+
+    // Create new user
+    const newUser = new User(payload);
+    await newUser.save();
+    res
+      .status(201)
+      .json({ success: true, message: "User created successfully", newUser });
+  } catch (error) {
+    return res.status(500).json({
+      success: false,
+      message: "Internal Server Error",
+      error: error.message,
+    });
+  }
+};
+
+const getUsers = async (req, res) => {
+  try {
+    const { name, page, limit } = req.query; // name is the combined search term
+    const filter = {};
+
+    if (name && name.trim() !== "") {
+      filter.$or = [
+        { firstName: { $regex: name.trim(), $options: "i" } }, // Search by firstName
+        { lastName: { $regex: name.trim(), $options: "i" } }, // Search by lastName
+      ];
+    }
+
+    // Prepare pagination if page and limit are provided
+    let users;
+    let totalUsers;
+    let totalPages = 1;
+
+    if (page && limit) {
+      const skip = (parseInt(page) - 1) * parseInt(limit);
+      users = await userService.getUsers(filter, skip, parseInt(limit));
+      totalUsers = await User.countDocuments(filter);
+      totalPages = Math.ceil(totalUsers / parseInt(limit));
+    } else {
+      users = await userService.getUsers(filter);
+      totalUsers = users.length;
+      totalPages = 1; // No pagination if no limit is applied
+    }
+
+    const usersWithRoleNames = users.map((user) => {
+      if (user.role && user.role.name) {
+        user.roleName = user.role.name;
+      }
+      return user;
+    });
+    res.status(200).json({
+      users: usersWithRoleNames,
+      totalPages,
+    });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+};
+
+const userUpdate = async (req, res) => {
+  const { firstName, lastName, email, dob, role, status } = req.body;
+  const { id } = req.params;
+
+  const errors = [];
+  if (!mongoose.Types.ObjectId.isValid(id)) {
+    return res.json({ success: false, message: "Invalid user ID" });
+  }
+
+  if (!email || !/^[\w.-]+@([\w-]+\.)+[a-zA-Z]{2,7}$/.test(email)) {
+    errors.push("Invalid or missing email");
+  }
+
+  if (!role || !mongoose.Types.ObjectId.isValid(role)) {
+    errors.push("Invalid role ID");
+  }
+
+  let statusValue = Array.isArray(status) ? status[0] : status;
+  if (!["active", "inactive"].includes(statusValue)) {
+    errors.push("Invalid status value");
+  }
+
+  if (errors.length > 0) {
+    return res.json({ success: false, errors });
+  }
+
+  try {
+    const [roleData, existingUser] = await Promise.all([
+      Roles.findById(role),
+      User.findById(id),
+    ]);
+
+    if (!existingUser) {
+      return res.json({ success: false, message: "User not found" });
+    }
+
+    if (!roleData) {
+      return res.json({ success: false, message: "Role not found" });
+    }
+
+    const emailExists = await User.findOne({ email, _id: { $ne: id } });
+    if (emailExists) {
+      return res.json({
+        success: false,
+        message: "A user with this email already exists.",
+      });
+    }
+
+    let photo = existingUser.photo;
+
+    if (req.file) {
+      photo = saveFile(req.file);
+    }
+    existingUser.firstName = firstName;
+    existingUser.lastName = lastName;
+    existingUser.email = email;
+    existingUser.dob = dob;
+    existingUser.role = roleData._id;
+    existingUser.status = statusValue;
+    existingUser.photo = photo;
+
+    await existingUser.save();
+
+    const populatedUser = await User.findById(id).populate("role");
+
+    return res.status(200).json({
+      success: true,
+      message: "User updated successfully",
+      user: populatedUser,
+    });
+  } catch (error) {
+    return res.status(500).json({
+      success: false,
+      message: "Internal Server Error",
+      error: error.message,
+    });
+  }
+};
 
 const register = async (req, res) => {
   try {
@@ -92,10 +280,8 @@ const register = async (req, res) => {
 };
 
 const verifyEmail = async (req, res) => {
-  console.log("=======verify button");
   try {
     const { token } = req.body;
-    console.log("=======token", token);
 
     if (!token) {
       return res
@@ -151,161 +337,32 @@ const verifyEmail = async (req, res) => {
   }
 };
 
-const userAdd = async (req, res) => {
-  const { firstName, lastName, email, password, dob, role, status } = req.body;
-
-  try {
-    const emailRegex = /^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/;
-    if (!emailRegex.test(email)) {
-      return res.json({
-        success: "false",
-        message: "Invalid email format",
-      });
-    }
-
-    const hashedPassword = await bcrypt.hash(password, 10);
-
-    const existingEmail = await User.findOne({ email });
-    if (existingEmail) {
-      return res.status(400).json({
-        success: "false",
-        message: "User With Same Email is Already Added",
-      });
-    }
-
-    let roleData = await Roles.findOne({ _id: role });
-    if (!roleData) {
-      return res.status(400).json({
-        success: "false",
-        message: "Role Not Found",
-      });
-    }
-
-    let payload = {
-      firstName: firstName,
-      lastName: lastName,
-      email,
-      dob,
-      password: hashedPassword,
-      role: roleData._id, // Store role as ID
-      status: status,
-    };
-
-    // Create new user
-    const newUser = new User(payload);
-    await newUser.save();
-    res
-      .status(201)
-      .json({ success: "true", message: "User created successfully", newUser });
-  } catch (error) {
-    res.status(500).json({ error: error.message });
-  }
-};
-
-const getUsers = async (req, res) => {
-  try {
-    const { name, page, limit } = req.query; // name is the combined search term
-    const filter = {};
-
-    if (name && name.trim() !== "") {
-      filter.$or = [
-        { firstName: { $regex: name.trim(), $options: "i" } }, // Search by firstName
-        { lastName: { $regex: name.trim(), $options: "i" } }, // Search by lastName
-      ];
-    }
-
-    // Prepare pagination if page and limit are provided
-    let users;
-    let totalUsers;
-    let totalPages = 1;
-
-    if (page && limit) {
-      const skip = (parseInt(page) - 1) * parseInt(limit);
-      users = await userService.getUsers(filter, skip, parseInt(limit));
-      totalUsers = await User.countDocuments(filter);
-      totalPages = Math.ceil(totalUsers / parseInt(limit));
-    } else {
-      users = await userService.getUsers(filter);
-      totalUsers = users.length;
-      totalPages = 1; // No pagination if no limit is applied
-    }
-
-    const usersWithRoleNames = users.map((user) => {
-      if (user.role && user.role.name) {
-        user.roleName = user.role.name; // Add role name directly in the user object
-      }
-      return user;
-    });
-    res.status(200).json({
-      users: usersWithRoleNames,
-      totalPages,
-    });
-  } catch (error) {
-    res.status(500).json({ error: error.message });
-  }
-};
-
-const userUpdate = async (req, res) => {
-  const { firstName, lastName, email, dob, role, status } = req.body;
-  const { id } = req.params; // Get id from URL params
-
-  try {
-    const emailRegex = /^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/;
-    if (!emailRegex.test(email)) {
-      return res.status(400).json({
-        success: "false",
-        message: "Invalid email format",
-      });
-    }
-
-    let roleData = await Roles.findOne({ _id: role });
-    if (!roleData) {
-      return res.status(400).json({
-        success: "false",
-        message: "Role Not Found",
-      });
-    }
-
-    let payload = {
-      firstName: firstName,
-      lastName: lastName,
-      email,
-      dob,
-      role: roleData._id,
-      status: status,
-    };
-
-    const updateUser = await User.findOneAndUpdate({ _id: id }, payload, {
-      new: true,
-    });
-    if (!updateUser) {
-      return res
-        .status(404)
-        .json({ success: "false", message: "roles not found" });
-    }
-    res.status(200).json({
-      success: "true",
-      message: "User updated successfully",
-      updateUser,
-    });
-  } catch (error) {
-    res.status(500).json({ error: error.message });
-  }
-};
-
 const userDelete = async (req, res) => {
   try {
-    const deleteUser = await User.findByIdAndDelete(req.params.id);
-    if (!deleteUser) {
-      return res
-        .status(404)
-        .json({ success: "false", message: "user not found" });
+    const { id } = req.params;
+    if (!id) {
+      return res.json({
+        success: false,
+        message: "User ID is required.",
+      });
     }
-    res
-      .status(200)
-      .json({ success: "true", message: "User deleted successfully" });
+
+    const deleteUser = await User.findByIdAndDelete(id);
+    if (!deleteUser) {
+      return res.json({ success: false, message: "user not found" });
+    }
+
+    return res.status(200).json({
+      success: true,
+      message: "User deleted successfully.",
+      data: deleteUser,
+    });
   } catch (error) {
-    res.status(500).json({ error: error.message });
+    return res.status(500).json({
+      success: false,
+      message: "Internal server error.",
+      error: error.message,
+    });
   }
 };
 
@@ -318,7 +375,10 @@ const login = async (req, res) => {
         error: "Email and password is required",
       });
     }
-    let user = await User.findOne({ email: email });
+
+    const user = await User.findOne({ email })
+      .populate("role")
+      .select("+password");
 
     if (!user) {
       return res.json({ success: false, error: "Email address is invalid" });
@@ -332,21 +392,25 @@ const login = async (req, res) => {
     //   });
     // }
 
-    const passwordCheck = await bcrypt.compare(password, user.password);
-    if (!passwordCheck) {
-      return res.json({ success: false, error: "Wrong password!" });
+    const isMatch = await bcrypt.compare(password, user.password);
+    if (!isMatch) {
+      return res.status(401).json({
+        success: false,
+        error: "Invalid email or password.",
+      });
     }
 
-    const data = { user: { id: user._id } };
-    const authToken = jwt.sign(data, JWT_SECRET);
-    user = await User.findOne({ _id: user._id })
-      .populate("role")
-      .select("-password");
+    const authToken = jwt.sign({ user: { id: user._id } }, JWT_SECRET, {
+      expiresIn: "1h",
+    });
+
+    const userWithoutPassword = user.toObject();
+    delete userWithoutPassword.password;
 
     res.status(201).json({
       success: true,
       message: "Login successfully",
-      user,
+      user: userWithoutPassword,
       authToken,
     });
   } catch (error) {
