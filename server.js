@@ -8,19 +8,12 @@ const apiRoutes = require("./routes");
 
 const app = express();
 
-const frontendUrl = (
-  process.env.FRONTEND_URL || "https://mt-frontend-puce.vercel.app"
-).replace(/\/$/, "");
-console.log("✅ FRONTEND_URL:", frontendUrl);
-
 const allowedOrigins = [
-  "http://localhost:5173",
-  "http://localhost:3000",
+  // "http://localhost:5173",
+  // "http://localhost:3000",
   "https://mt-dashboard-ten.vercel.app",
   "https://mt-frontend-puce.vercel.app",
 ];
-
-console.log("✅ Allowed origins:", allowedOrigins);
 
 const corsOptions = {
   origin: function (origin, callback) {
