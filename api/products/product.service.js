@@ -21,14 +21,24 @@ const createProduct = async (payload) => {
       price: payload.price,
       offerPrice: payload.offerPrice,
       discount: payload.discount,
-      color: payload.color,
-      size: payload.size,
+      stock_quantity: payload.stock_quantity,
+      low_stock_alert: payload.low_stock_alert,
       deliveryTime: payload.deliveryTime,
       stock: payload.stock,
       brands: payload.brands,
       status: payload.status,
       description: payload.description,
       images: payload.images,
+      createdBy: payload.createdBy,
+      specifications: payload.specifications || [],
+      seo: {
+        title: payload.seo_title,
+        keywords: (payload.seo_keywords || "")
+          .split(",")
+          .map((k) => k.trim())
+          .filter(Boolean),
+        description: payload.seo_description,
+      },
     });
 
     // Save the product to the database

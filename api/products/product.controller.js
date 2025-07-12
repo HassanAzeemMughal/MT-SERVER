@@ -9,12 +9,20 @@ const createProduct = async (req, res) => {
     const payload = req.body;
     const images = req.files;
 
-    console.log("=====payload", payload.color);
+    // 1. Convert comma-separated strings to arrays
+    if (typeof payload.categories === "string") {
+      payload.categories = payload.categories.split(",");
+    }
 
-    // Save multiple images properly
-    const imageUrls = await Promise.all(images.map((file) => saveFile(file)));
+    if (typeof payload.specifications === "string") {
+      payload.specifications = JSON.parse(payload.specifications);
+    }
 
-    // Assign images to payload
+    // 2. Handle images
+    let imageUrls = [];
+    if (images && images.length > 0) {
+      imageUrls = await Promise.all(images.map((file) => saveFile(file)));
+    }
     payload.images = imageUrls;
 
     // Calculate offerPrice if price and discount are provided
@@ -25,6 +33,7 @@ const createProduct = async (req, res) => {
 
     // Generate slug safely
     payload.slug = createSlug(payload.name);
+    payload.createdBy = null;
 
     // Proceed to product creation if no errors
     const newProduct = await productService.createProduct(payload);
