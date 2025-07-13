@@ -1,6 +1,8 @@
 const productService = require("./product.service"); // Import the product service
 const { validationResult } = require("express-validator"); // For validation (optional)
 const { createSlug, saveFile } = require("../../util/Helper");
+const path = require("path");
+const fs = require("fs");
 const Product = require("./product.model");
 const mongoose = require("mongoose");
 
@@ -128,31 +130,53 @@ const updateProduct = async (req, res) => {
       return res.json({ success: false, message: "Product not found" });
     }
 
-    let existingImages = existingProduct.images || [];
+    // 1. Handle image deletion
+    const imagesToDelete = payload.imagesToDelete
+      ? payload.imagesToDelete.split(",")
+      : [];
 
-    // Save new images
-    const newImageUrls = await Promise.all(
-      images.map((file) => saveFile(file))
+    await Promise.all(
+      imagesToDelete.map((imagePath) => {
+        // Construct absolute path to the file
+        const filePath = path.join(__dirname, "..", "public", imagePath);
+
+        if (fs.existsSync(filePath)) {
+          return fs.promises.unlink(filePath);
+        }
+        return Promise.resolve();
+      })
     );
 
-    // Merge old and new images
+    // 2. Get remaining existing images
+    const existingImages = payload.existingImages
+      ? payload.existingImages.split(",")
+      : [];
+
+    // 3. Save new images
+    const newImageUrls = await Promise.all(
+      (images || []).map((file) => saveFile(file))
+    );
+
+    // 4. Combine remaining existing and new images
     payload.images = [...existingImages, ...newImageUrls];
 
+    // Remove temporary fields
+    delete payload.existingImages;
+    delete payload.imagesToDelete;
+
+    // Process other fields (price, discount, etc.)
     const price = parseFloat(payload.price);
     let discount = payload.discount;
 
-    // Ensure discount is a number or null
     if (discount === "" || discount === "null" || discount === undefined) {
       discount = null;
     } else {
       discount = parseFloat(discount);
-      if (isNaN(discount)) discount = null; // Handle invalid cases
+      if (isNaN(discount)) discount = null;
     }
 
-    // Assign back to payload
     payload.discount = discount;
 
-    // Calculate offerPrice only if price is valid
     if (!isNaN(price) && discount !== null) {
       payload.offerPrice = price - price * (discount / 100);
     } else {
@@ -163,6 +187,7 @@ const updateProduct = async (req, res) => {
       payload.slug = createSlug(payload.name);
     }
 
+    // Process attributes
     if (typeof payload.attributes === "string") {
       try {
         payload.attributes = JSON.parse(payload.attributes);
@@ -171,26 +196,32 @@ const updateProduct = async (req, res) => {
       }
     }
 
-    // Validate brands field
+    // Process brands
     if (payload.brands && !Array.isArray(payload.brands)) {
-      payload.brands = [payload.brands]; // Ensure it's an array
+      payload.brands = [payload.brands];
     }
 
     if (payload.brands) {
       payload.brands = payload.brands
-        .filter((brand) => mongoose.Types.ObjectId.isValid(brand)) // Filter out invalid IDs
-        .map((brand) => new mongoose.Types.ObjectId(brand)); // Convert to ObjectId
+        .filter((brand) => mongoose.Types.ObjectId.isValid(brand))
+        .map((brand) => new mongoose.Types.ObjectId(brand));
     }
 
+    // Update product
     const updatedProduct = await productService.updateProduct(id, payload);
-    // Return the updated product in the response
+
     return res.status(200).json({
       success: true,
       message: "Product updated successfully",
       product: updatedProduct,
     });
   } catch (error) {
-    return res.json({ success: false, message: "Server error" });
+    console.error("Error updating product:", error);
+    return res.status(500).json({
+      success: false,
+      message: "Server error",
+      error: error.message,
+    });
   }
 };
 
