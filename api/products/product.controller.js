@@ -6,6 +6,7 @@ const mongoose = require("mongoose");
 
 const createProduct = async (req, res) => {
   try {
+    console.log("req.body",req.body);
     const payload = req.body;
     const images = req.files;
 
