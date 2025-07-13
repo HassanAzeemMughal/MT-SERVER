@@ -80,6 +80,10 @@ const getProductById = async (productId) => {
 };
 const updateProduct = async (id, payload) => {
   try {
+    const attributes = (payload.attributes || []).map((attr) => ({
+      attribute: new mongoose.Types.ObjectId(attr.attribute),
+      selectedValues: attr.selectedValues,
+    }));
     // Find the product by ID and update it with the new values
     const updatedProduct = await Product.findByIdAndUpdate(
       id,
@@ -87,17 +91,28 @@ const updateProduct = async (id, payload) => {
         name: payload.name,
         slug: payload.slug,
         categories: payload.categories,
-        images: payload.images,
         price: payload.price,
         offerPrice: payload.offerPrice,
         discount: payload.discount,
-        color: payload.color,
-        size: payload.size,
+        stock_quantity: payload.stock_quantity,
+        low_stock_alert: payload.low_stock_alert,
         deliveryTime: payload.deliveryTime,
         stock: payload.stock,
         brands: payload.brands,
         status: payload.status,
         description: payload.description,
+        images: payload.images,
+        createdBy: payload.createdBy,
+        attributes: attributes,
+
+        seo: {
+          title: payload.seo_title,
+          keywords: (payload.seo_keywords || "")
+            .split(",")
+            .map((k) => k.trim())
+            .filter(Boolean),
+          description: payload.seo_description,
+        },
       },
       {
         new: true,

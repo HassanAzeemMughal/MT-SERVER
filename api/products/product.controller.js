@@ -125,9 +125,7 @@ const updateProduct = async (req, res) => {
     const existingProduct = await productService.getProductById(id);
 
     if (!existingProduct) {
-      return res
-        .status(404)
-        .json({ success: "false", message: "Product not found" });
+      return res.json({ success: false, message: "Product not found" });
     }
 
     let existingImages = existingProduct.images || [];
@@ -165,6 +163,14 @@ const updateProduct = async (req, res) => {
       payload.slug = createSlug(payload.name);
     }
 
+    if (typeof payload.attributes === "string") {
+      try {
+        payload.attributes = JSON.parse(payload.attributes);
+      } catch (e) {
+        payload.attributes = [];
+      }
+    }
+
     // Validate brands field
     if (payload.brands && !Array.isArray(payload.brands)) {
       payload.brands = [payload.brands]; // Ensure it's an array
@@ -179,13 +185,12 @@ const updateProduct = async (req, res) => {
     const updatedProduct = await productService.updateProduct(id, payload);
     // Return the updated product in the response
     return res.status(200).json({
-      success: "true",
+      success: true,
       message: "Product updated successfully",
       product: updatedProduct,
     });
   } catch (error) {
-    console.error("Error in updateProduct controller:", error.message);
-    return res.json({ message: "Server error" });
+    return res.json({ success: false, message: "Server error" });
   }
 };
 
