@@ -6,7 +6,7 @@ const mongoose = require("mongoose");
 
 const createProduct = async (req, res) => {
   try {
-    console.log("req.body",req.body);
+    console.log("req.body", req.body);
     const payload = req.body;
     const images = req.files;
 
@@ -45,13 +45,13 @@ const createProduct = async (req, res) => {
     const newProduct = await productService.createProduct(payload);
 
     return res.status(201).json({
-      success: "true",
+      success: true,
       message: "Product created successfully",
       product: newProduct,
     });
   } catch (error) {
     console.error("Error in createProduct controller:", error.message);
-    return res.status(500).json({ message: "Server error" });
+    return res.status(500).json({ success: false, message: "Server error" });
   }
 };
 
