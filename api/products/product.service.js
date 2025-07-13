@@ -14,6 +14,11 @@ const { createSlug } = require("../../util/Helper");
  */
 const createProduct = async (payload) => {
   try {
+    const attributes = (payload.attributes || []).map((attr) => ({
+      attribute: new mongoose.Types.ObjectId(attr.attribute),
+      selectedValues: attr.selectedValues,
+    }));
+
     const newProduct = new Product({
       name: payload.name,
       slug: payload.slug,
@@ -30,7 +35,8 @@ const createProduct = async (payload) => {
       description: payload.description,
       images: payload.images,
       createdBy: payload.createdBy,
-      specifications: payload.specifications || [],
+      attributes: attributes,
+
       seo: {
         title: payload.seo_title,
         keywords: (payload.seo_keywords || "")

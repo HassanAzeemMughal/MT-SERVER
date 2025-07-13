@@ -1,16 +1,5 @@
 const mongoose = require("mongoose");
 
-const specificationSchema = new mongoose.Schema({
-  specification_name: {
-    type: String,
-    trim: true,
-  },
-  specification_value: {
-    type: String,
-    trim: true,
-  },
-});
-
 const productSchema = new mongoose.Schema(
   {
     name: { type: String, required: true, trim: true },
@@ -30,12 +19,17 @@ const productSchema = new mongoose.Schema(
       { type: mongoose.Schema.Types.ObjectId, ref: "Brand", default: null },
     ],
     status: { type: String, trim: true },
-    specifications: [specificationSchema],
     seo: {
       title: { type: String, trim: true },
       keywords: [{ type: String, trim: true }],
       description: { type: String, trim: true },
     },
+    attributes: [
+      {
+        attribute: { type: mongoose.Schema.Types.ObjectId, ref: "Attribute" },
+        selectedValues: [{ type: String }],
+      },
+    ],
     createdBy: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "User",

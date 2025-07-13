@@ -14,8 +14,13 @@ const createProduct = async (req, res) => {
       payload.categories = payload.categories.split(",");
     }
 
-    if (typeof payload.specifications === "string") {
-      payload.specifications = JSON.parse(payload.specifications);
+    // Parse attributes from JSON string
+    if (typeof payload.attributes === "string") {
+      try {
+        payload.attributes = JSON.parse(payload.attributes);
+      } catch (e) {
+        payload.attributes = [];
+      }
     }
 
     // 2. Handle images
