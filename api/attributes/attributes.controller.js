@@ -2,7 +2,6 @@ const attributeService = require("./attributes.service");
 const Attribute = require("./attributes.model");
 const mongoose = require("mongoose");
 
-// Controller to create a new attribute
 const createAttribute = async (req, res) => {
   try {
     const attributeData = req.body;
