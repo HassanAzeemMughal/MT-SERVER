@@ -56,6 +56,10 @@ const createProduct = async (payload) => {
   }
 };
 
+const findProductByName = async (name) => {
+  return Product.findOne({ name: name });
+};
+
 const getProducts = async (filter = {}, skip = 0, limit = 10) => {
   try {
     return await Product.find(filter)
@@ -182,4 +186,5 @@ module.exports = {
   deleteProduct,
   deleteProductTagsIndexBased,
   fetchTrendingProducts,
+  findProductByName,
 };

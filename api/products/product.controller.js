@@ -9,7 +9,6 @@ const mongoose = require("mongoose");
 const createProduct = async (req, res) => {
   try {
     const payload = req.body;
-    // const images = req.files;
 
     // 1. Convert comma-separated strings to arrays
     if (typeof payload.categories === "string") {
@@ -26,7 +25,6 @@ const createProduct = async (req, res) => {
     }
 
     // 2. Handle images
-    // Convert comma-separated images to array of ObjectIds
     if (typeof payload.images === "string") {
       payload.images = payload.images
         .split(",")
@@ -45,7 +43,18 @@ const createProduct = async (req, res) => {
     payload.slug = createSlug(payload.name);
     payload.createdBy = null;
 
-    // Proceed to product creation if no errors
+    // ✅ CHECK IF NAME ALREADY EXISTS
+    const existingProduct = await productService.findProductByName(
+      payload.name
+    );
+    if (existingProduct) {
+      return res.json({
+        success: false,
+        message: `Product with name "${payload.name}" already exists`,
+      });
+    }
+
+    // Proceed to product creation
     const newProduct = await productService.createProduct(payload);
 
     return res.status(201).json({
