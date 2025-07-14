@@ -20,7 +20,8 @@ const getCategories = async (filter = {}, skip = 0, limit = 10) => {
     return await Category.find(filter)
       .skip(skip)
       .limit(limit)
-      .populate("parent", "_id title");
+      .populate("parent", "_id title")
+      .populate("image", "url");
   } catch (error) {
     throw new Error("Error fetching categories: " + error.message);
   }
@@ -43,7 +44,9 @@ const getCategoryById = async (id) => {
     throw new Error("Invalid category ID");
   }
   try {
-    return await Category.findById(id).populate("parent");
+    return await Category.findById(id)
+      .populate("parent")
+      .populate("image", "url");
   } catch (error) {
     throw new Error("Error fetching category: " + error.message);
   }

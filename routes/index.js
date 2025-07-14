@@ -7,6 +7,7 @@ const mailService = require("../util/MailService");
 const rolesRoutes = require("../api/roles/roles.routes");
 const orderRoutes = require("../api/orders/order.routes");
 const attributesRoutes = require("../api/attributes/attributes.routes");
+const filesRoutes = require("../api/files/file.routes");
 
 const router = express.Router();
 
@@ -18,5 +19,6 @@ router.use("/orders", orderRoutes);
 router.use("/brands", brandRoutes);
 router.use("/auth", authRoutes);
 router.use("/attributes", attributesRoutes);
+router.use("/files", filesRoutes);
 
 module.exports = router;

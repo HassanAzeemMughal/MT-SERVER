@@ -62,17 +62,17 @@ const getProducts = async (filter = {}, skip = 0, limit = 10) => {
       .skip(skip)
       .limit(limit)
       .populate("categories", "title")
-      .populate("brands", "name");
+      .populate("brands", "name")
+      .populate("images", "url");
   } catch (error) {
     throw new Error("Error fetching categories: " + error.message);
   }
 };
 
 const getProductById = async (productId) => {
-  const product = await Product.findById(productId).populate(
-    "categories",
-    "_id title"
-  );
+  const product = await Product.findById(productId)
+    .populate("categories", "_id title")
+    .populate("images", "url");
   if (!product) {
     throw new Error("Product not found.");
   }

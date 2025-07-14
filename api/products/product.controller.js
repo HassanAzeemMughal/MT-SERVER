@@ -8,9 +8,8 @@ const mongoose = require("mongoose");
 
 const createProduct = async (req, res) => {
   try {
-    console.log("req.body", req.body);
     const payload = req.body;
-    const images = req.files;
+    // const images = req.files;
 
     // 1. Convert comma-separated strings to arrays
     if (typeof payload.categories === "string") {
@@ -27,11 +26,14 @@ const createProduct = async (req, res) => {
     }
 
     // 2. Handle images
-    let imageUrls = [];
-    if (images && images.length > 0) {
-      imageUrls = await Promise.all(images.map((file) => saveFile(file)));
+    // Convert comma-separated images to array of ObjectIds
+    if (typeof payload.images === "string") {
+      payload.images = payload.images
+        .split(",")
+        .map((id) => id.trim())
+        .filter(Boolean)
+        .map((id) => new mongoose.Types.ObjectId(id));
     }
-    payload.images = imageUrls;
 
     // Calculate offerPrice if price and discount are provided
     if (payload.price && payload.discount) {
@@ -111,7 +113,7 @@ const getProById = async (req, res) => {
   try {
     const { id } = req.params;
     const product = await productService.getProductById(id);
-    res.status(200).json({ success: "true", product });
+    res.status(200).json({ success: true, product });
   } catch (err) {
     res.status(400).json({ error: err.message });
   }
@@ -123,23 +125,20 @@ const updateProduct = async (req, res) => {
     const payload = req.body;
     const images = req.files;
 
-    // Fetch existing product to get previous images
     const existingProduct = await productService.getProductById(id);
-
     if (!existingProduct) {
-      return res.json({ success: false, message: "Product not found" });
+      return res
+        .status(404)
+        .json({ success: false, message: "Product not found" });
     }
 
-    // 1. Handle image deletion
     const imagesToDelete = payload.imagesToDelete
       ? payload.imagesToDelete.split(",")
       : [];
 
     await Promise.all(
       imagesToDelete.map((imagePath) => {
-        // Construct absolute path to the file
         const filePath = path.join(__dirname, "..", "public", imagePath);
-
         if (fs.existsSync(filePath)) {
           return fs.promises.unlink(filePath);
         }
@@ -147,28 +146,23 @@ const updateProduct = async (req, res) => {
       })
     );
 
-    // 2. Get remaining existing images
     const existingImages = payload.existingImages
       ? payload.existingImages.split(",")
       : [];
 
-    // 3. Save new images
     const newImageUrls = await Promise.all(
       (images || []).map((file) => saveFile(file))
     );
 
-    // 4. Combine remaining existing and new images
     payload.images = [...existingImages, ...newImageUrls];
 
-    // Remove temporary fields
     delete payload.existingImages;
     delete payload.imagesToDelete;
 
-    // Process other fields (price, discount, etc.)
     const price = parseFloat(payload.price);
     let discount = payload.discount;
 
-    if (discount === "" || discount === "null" || discount === undefined) {
+    if (!discount || discount === "null") {
       discount = null;
     } else {
       discount = parseFloat(discount);
@@ -187,16 +181,14 @@ const updateProduct = async (req, res) => {
       payload.slug = createSlug(payload.name);
     }
 
-    // Process attributes
     if (typeof payload.attributes === "string") {
       try {
         payload.attributes = JSON.parse(payload.attributes);
-      } catch (e) {
+      } catch {
         payload.attributes = [];
       }
     }
 
-    // Process brands
     if (payload.brands && !Array.isArray(payload.brands)) {
       payload.brands = [payload.brands];
     }
@@ -207,7 +199,6 @@ const updateProduct = async (req, res) => {
         .map((brand) => new mongoose.Types.ObjectId(brand));
     }
 
-    // Update product
     const updatedProduct = await productService.updateProduct(id, payload);
 
     return res.status(200).json({

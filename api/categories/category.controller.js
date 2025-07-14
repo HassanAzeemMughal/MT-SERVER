@@ -7,9 +7,7 @@ const mongoose = require("mongoose");
 const createCategory = async (req, res) => {
   try {
     const categoryData = req.body;
-    const imageFile = req.file;
-    console.log("======categoryData", categoryData);
-    console.log("======imageFile", imageFile);
+    // const imageFile = req.file;
     // Validate required fields
     if (!categoryData.title) {
       return res.json({
@@ -29,9 +27,9 @@ const createCategory = async (req, res) => {
       });
     }
 
-    if (imageFile) {
-      categoryData.image = saveFile(imageFile);
-    }
+    // if (imageFile) {
+    //   categoryData.image = saveFile(imageFile);
+    // }
 
     categoryData.parent = categoryData.parent
       ? new mongoose.Types.ObjectId(categoryData.parent)
@@ -113,11 +111,9 @@ const getCategoryById = async (req, res) => {
   try {
     const category = await categoryService.getCategoryById(req.params.id);
     if (!category) {
-      return res
-        .status(404)
-        .json({ success: "false", message: "Category not found" });
+      return res.json({ success: false, message: "Category not found" });
     }
-    res.status(200).json({ success: "true", category });
+    res.status(200).json({ success: true, category });
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
@@ -128,7 +124,7 @@ const updateCategory = async (req, res) => {
   try {
     const categoryData = req.body;
     const { id } = req.params;
-    const imageFile = req.file;
+    // const imageFile = req.file;
 
     if (!categoryData.title) {
       return res.json({ success: false, message: "Title is required." });
@@ -148,9 +144,9 @@ const updateCategory = async (req, res) => {
       });
     }
 
-    if (imageFile) {
-      categoryData.image = saveFile(imageFile);
-    }
+    // if (imageFile) {
+    //   categoryData.image = saveFile(imageFile);
+    // }
 
     // Validate and convert parent if provided
     if (categoryData.parent) {
