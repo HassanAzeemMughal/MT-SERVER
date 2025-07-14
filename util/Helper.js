@@ -11,13 +11,32 @@ const createSlug = (text) => {
     .replace(/-+$/, ""); // Remove trailing hyphens
 };
 
+// const saveFile = (file) => {
+//   const fileExtension = file.originalname.split(".").pop();
+//   const fileName = `${Date.now()}.${fileExtension}`;
+//   const imageFilePath = path.join(__dirname, `../uploads/${fileName}`);
+//   fs.writeFileSync(imageFilePath, file.buffer);
+//   let uri = process.env.REACT_APP_APP_BACK_URL;
+//   let imageUrl = `/uploads/${fileName}`;
+//   return imageUrl;
+// };
+
 const saveFile = (file) => {
   const fileExtension = file.originalname.split(".").pop();
   const fileName = `${Date.now()}.${fileExtension}`;
-  const imageFilePath = path.join(__dirname, `../uploads/${fileName}`);
+
+  // ✅ Make sure uploads folder exists
+  const uploadsDir = path.join(__dirname, "../uploads");
+  if (!fs.existsSync(uploadsDir)) {
+    fs.mkdirSync(uploadsDir, { recursive: true });
+  }
+
+  const imageFilePath = path.join(uploadsDir, fileName);
+
   fs.writeFileSync(imageFilePath, file.buffer);
-  let uri = process.env.REACT_APP_APP_BACK_URL;
-  let imageUrl = `/uploads/${fileName}`;
+
+  // return relative URL
+  const imageUrl = `/uploads/${fileName}`;
   return imageUrl;
 };
 
